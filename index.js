@@ -18,13 +18,14 @@ function verifyJWT(req, res, next) {
     next();
 }
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.PASSWORD}@cluster0.plbgo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.PASSWORD}@cluster0.ti07o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
 
 async function run() {
     try {
         await client.connect();
-        const inventoryCollecttion = client.db('carWarehouse').collection('inventory');
+        const inventoryCollecttion = client.db('warehouse').collection('warehousessssssss');
 
         // get inventory items
         app.get('/inventory', async (req, res) => {
